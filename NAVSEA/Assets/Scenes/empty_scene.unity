@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -456,6 +456,14 @@ PrefabInstance:
     - target: {fileID: 831020804167472752, guid: 14b2f904c012f204b94aa960a991840e, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103332432718950651, guid: 14b2f904c012f204b94aa960a991840e, type: 3}
+      propertyPath: requireFlatHand
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103332432718950651, guid: 14b2f904c012f204b94aa960a991840e, type: 3}
+      propertyPath: useGazeActivation
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2722896806718886372, guid: 14b2f904c012f204b94aa960a991840e, type: 3}
       propertyPath: m_RootOrder
