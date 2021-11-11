@@ -8,20 +8,20 @@ from PyQt5.QtWidgets import *
 
 def window():
     app = QApplication(sys.argv)
-    w = QWidget()
-    b = QLabel(w)
+    window = QWidget()
+    msg = QLabel(window)
 
-    b.setText("Hello World!")
-    w.setGeometry(100,100,400,400)
-    b.move(50,20)
-    w.setWindowTitle("PyQt5")
+    msg.setText("Hello World!")
+    window.setGeometry(100,100,400,400)
+    msg.move(50,20)
+    window.setWindowTitle("PyQt5")
 
-    button = QPushButton(w)
+    button = QPushButton(window)
     button.setText("Click me!")
     button.move(100,100)
     button.clicked.connect(button_click)
     
-    w.show()
+    window.show()
     sys.exit(app.exec_())
 
 def button_click():

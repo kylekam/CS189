@@ -47,8 +47,13 @@ class MainWindow(QWidget):
     def CancelFeed(self):
         self.Worker1.stop()
     
-    def b1Action(self):
-        print("B1 Clicked!")
+    def arrowBTNAction(self):
+        print("Arrow Button Clicked!")
+        self.setCursor(QCursor(Qt.UpArrowCursor))
+
+    def highlightBTNAction(self):
+        print("Highlight Button Clicked!")
+        self.setCursor(QCursor(Qt.CrossCursor))
     
     def menu(self):
         self.container = QWidget()
@@ -59,13 +64,18 @@ class MainWindow(QWidget):
         self.CancelBTN.clicked.connect(self.CancelFeed)
         #self.VBL.addWidget(self.CancelBTN)
 
-        # Add temp button
-        self.b1 = QPushButton("Temp Button")
+        # Add arrow button
+        self.ArrowBTN = QPushButton("Arrow")
         #self.VBL.addWidget(self.b1)
-        self.b1.clicked.connect(self.b1Action)
+        self.ArrowBTN.clicked.connect(self.arrowBTNAction)
+
+        # Add highlight button
+        self.HighlightBTN = QPushButton("Highlight")
+        self.HighlightBTN.clicked.connect(self.highlightBTNAction)
 
         self.container.layout().addWidget(self.CancelBTN,0,0)
-        self.container.layout().addWidget(self.b1,0,1)
+        self.container.layout().addWidget(self.ArrowBTN,0,1)
+        self.container.layout().addWidget(self.HighlightBTN,0,2)
         self.layout().addWidget(self.container)
 
 
