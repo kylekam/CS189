@@ -33,7 +33,7 @@ class MainWindow(QWidget):
         self.menu()
         
         self.setWindowTitle("Sea++")
-        self.setGeometry(0, 0, 1000, 500)
+        self.setGeometry(0, 0, 800, 500)
 
         # Add thread for video stream
         self.Worker1 = Worker1()
@@ -49,11 +49,11 @@ class MainWindow(QWidget):
     
     def arrowBTNAction(self):
         print("Arrow Button Clicked!")
-        self.setCursor(QCursor(Qt.UpArrowCursor))
+        self.FeedLabel.setCursor(QCursor(Qt.UpArrowCursor))
 
     def highlightBTNAction(self):
         print("Highlight Button Clicked!")
-        self.setCursor(QCursor(Qt.CrossCursor))
+        self.FeedLabel.setCursor(QCursor(Qt.CrossCursor))
     
     def menu(self):
         self.container = QWidget()
@@ -77,6 +77,16 @@ class MainWindow(QWidget):
         self.container.layout().addWidget(self.ArrowBTN,0,1)
         self.container.layout().addWidget(self.HighlightBTN,0,2)
         self.layout().addWidget(self.container)
+
+    def mousePressEvent(self, QMouseEvent):
+        if self.FeedLabel.x() < QMouseEvent.x() and \
+            QMouseEvent.x() - self.FeedLabel.x() < self.FeedLabel.size().width() and \
+            self.FeedLabel.y() < QMouseEvent.y() and \
+            QMouseEvent.y() - self.FeedLabel.y() < self.FeedLabel.size().height():
+            
+            # prints relative coordinates of mouse click
+            # if inside the FeedLabel 
+            print(QMouseEvent.pos() - self.FeedLabel.pos())
 
 
 if __name__ == "__main__":
