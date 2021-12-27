@@ -71,7 +71,7 @@ public class TutorialMainActivity : MonoBehaviour
             }
             currentItem.Open();
             currentItem.OnTutorialEnter();
-        }
+        } 
     }
 
     public void CloseConditionHandler(bool newValue)
