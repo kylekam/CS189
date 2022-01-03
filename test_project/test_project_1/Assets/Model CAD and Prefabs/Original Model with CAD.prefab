@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 6899973704621824817}
   - component: {fileID: 6899973704621824846}
   m_Layer: 0
-  m_Name: Model
+  m_Name: Original Model with CAD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

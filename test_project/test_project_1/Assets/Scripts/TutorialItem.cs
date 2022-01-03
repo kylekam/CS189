@@ -20,6 +20,9 @@ public class TutorialItem : ScaleTween
     [Header("Display Location")]
     [SerializeField] Transform displayParent;
 
+    [Header("Animation")]
+    [SerializeField] private GameObject component;
+
     // *** ITutorialItem Implementation ***
     [SerializeField] private int m_itemOrder;
     public int ItemOrder
@@ -74,6 +77,10 @@ public class TutorialItem : ScaleTween
             // this.transform.parent = displayParent;
             this.transform.parent = displayParent;
             this.transform.localPosition = Vector3.zero;
+            if (component != null)
+            {
+                component.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
+            }
         }
         gameObject.SetActive(true);
         base.TweenIn();
@@ -85,6 +92,10 @@ public class TutorialItem : ScaleTween
         {
             gameObject.SetActive(false);
         });
+        if (component != null)
+        {
+            component.GetComponent<Renderer>().material.SetColor("_Color", Color.white);
+        }
     }
 
     public void OnTutorialEnter()

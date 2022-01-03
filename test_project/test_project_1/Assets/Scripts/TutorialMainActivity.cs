@@ -7,29 +7,12 @@ using UnityEngine.Events;
 public class TutorialMainActivity : MonoBehaviour
 {
     private List<TutorialItem> tutorialItems;
-    private TutorialItem currentItem;
+    private TutorialItem currentItem = null;
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log($"TutorialMainActivity Start");
-        StartActivity();
-        // tutorialItems = TutorialItem.GetTutorialItems();
-        // foreach(TutorialItem item in tutorialItems)
-        // {
-        //     item.OnTweenInComplete.AddListener(
-        //         delegate
-        //         {
-
-        //         }
-        //     );
-
-        //     ARDebug.logToUnityConsole = true;
-        //     ARDebug.Log($"[Tutorial Item {item.ItemOrder}] TweenIn Callbacks: {item.OnTweenInComplete.GetPersistentEventCount()}");
-        //     ARDebug.logToUnityConsole = false;
-
-        //     item.OnTweenOutComplete.AddListener(DoTutorialItemExit);
-        // }
     }
 
     // Update is called once per frame
@@ -37,10 +20,14 @@ public class TutorialMainActivity : MonoBehaviour
 
     public void StartActivity()
     {
-        tutorialItems = TutorialItem.GetTutorialItems();
-        currentItem = tutorialItems[0];
-        currentItem.Open();
-        currentItem.OnTutorialEnter();
+        Debug.Log("start activity");
+        if (currentItem == null)
+        {
+            tutorialItems = TutorialItem.GetTutorialItems();
+            currentItem = tutorialItems[0];
+            currentItem.Open();
+            currentItem.OnTutorialEnter();
+        }
     }
 
     public void StopActivity()
@@ -71,7 +58,10 @@ public class TutorialMainActivity : MonoBehaviour
             }
             currentItem.Open();
             currentItem.OnTutorialEnter();
-        } 
+        } else
+        {
+            currentItem = null;
+        }
     }
 
     public void CloseConditionHandler(bool newValue)
