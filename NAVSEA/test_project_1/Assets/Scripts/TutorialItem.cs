@@ -79,7 +79,16 @@ public class TutorialItem : ScaleTween
             this.transform.localPosition = Vector3.zero;
             if (component != null)
             {
-                component.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
+                if (component.GetComponent<Renderer>() != null)
+                {
+                    component.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
+                } else
+                {
+                    for (int i = 0; i < component.transform.childCount; i++)
+                    {
+                        component.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
+                    }
+                }
             }
         }
         gameObject.SetActive(true);
@@ -94,7 +103,17 @@ public class TutorialItem : ScaleTween
         });
         if (component != null)
         {
-            component.GetComponent<Renderer>().material.SetColor("_Color", Color.white);
+            if (component.GetComponent<Renderer>() != null)
+            {
+                component.GetComponent<Renderer>().material.SetColor("_Color", Color.white);
+            } else
+            {
+                for (int i = 0; i < component.transform.childCount; i++)
+                {
+                    component.transform.GetChild(i).GetComponent<Renderer>().material.color = new Color(0.8f, 0.8f, 0.8f, 1f);
+                }
+            }
+
         }
     }
 
