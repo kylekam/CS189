@@ -68,8 +68,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 19.56011, y: 13.3761425, z: 1.9670401}
-  m_Center: {x: -9.280054, y: 6.1880717, z: 0.48351166}
+  m_Size: {x: 18, y: 11.95, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6154953054827954153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +288,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: knob cylinder
+      objectReference: {fileID: 0}
+    - target: {fileID: 3489091885913816164, guid: 622c3ce84e40d054abfc6440607d68d2,
+        type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3489091885913816164, guid: 622c3ce84e40d054abfc6440607d68d2,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3489091885913816164, guid: 622c3ce84e40d054abfc6440607d68d2,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3489091885913816164, guid: 622c3ce84e40d054abfc6440607d68d2,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3489091885913816164, guid: 622c3ce84e40d054abfc6440607d68d2,
+        type: 3}
+      propertyPath: m_Direction
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8606192236529067385, guid: 622c3ce84e40d054abfc6440607d68d2,
         type: 3}
@@ -693,6 +718,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: button cylinder
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477829235807285908, guid: 1bcb608abb44cf748aeb0277b5d97631,
+        type: 3}
+      propertyPath: m_Height
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8728144712801446793, guid: 1bcb608abb44cf748aeb0277b5d97631,
         type: 3}
