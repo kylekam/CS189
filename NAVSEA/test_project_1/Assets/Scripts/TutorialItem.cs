@@ -9,6 +9,7 @@ using TMPro;
 public class TutorialItem : ScaleTween
 {
     public enum ContinueType { OkButton, Hand, None }
+    public enum ComponentAction { None, flipSwitch, turnLever }
 
     [Header("Visual Components")]
     [SerializeField] private TextMeshPro bodyTextMesh;
@@ -22,6 +23,7 @@ public class TutorialItem : ScaleTween
 
     [Header("Animation")]
     [SerializeField] private GameObject component;
+    [SerializeField] private ComponentAction componentAction;
 
     // *** ITutorialItem Implementation ***
     [SerializeField] private int m_itemOrder;
@@ -88,6 +90,14 @@ public class TutorialItem : ScaleTween
                     {
                         component.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
                     }
+                }
+                if (componentAction == ComponentAction.flipSwitch)
+                {
+                    //Debug.Log(component.transform.position);
+                    component.transform.Rotate(0, 0, 180);
+                    //component.transform.Translate(0.8f,-0.3f, 0f, Space.Self);
+                    //Debug.Log(component.transform.position);
+                    //component.transform.position += new Vector3(0.8f, -0.3f, 0.0f);
                 }
             }
         }
