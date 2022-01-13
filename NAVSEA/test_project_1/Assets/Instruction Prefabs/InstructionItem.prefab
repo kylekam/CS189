@@ -65,6 +65,7 @@ MonoBehaviour:
   continueType: 0
   displayParent: {fileID: 0}
   component: {fileID: 0}
+  componentAction: 0
   m_itemOrder: 1
   CloseCondition: {fileID: 0}
 --- !u!1 &780469603012230810
