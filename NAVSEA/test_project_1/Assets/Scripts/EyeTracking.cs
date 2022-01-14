@@ -33,35 +33,88 @@ public class EyeTracking : MonoBehaviour
             GameObject go = hitInfo.collider.gameObject;
             if (lastGameObject == null)
             {
-                var renderer = go.GetComponent<Renderer>();
-
-                lastGameObject = go;
-                lastColor = renderer.material.color;
-                renderer.material.SetColor("_Color", Color.green);
-            } else if (go != lastGameObject)
+                if(go.GetComponent<Renderer>() != null)
+                {
+                    
+                    var renderer = go.GetComponent<Renderer>();
+                    lastGameObject = go;
+                    lastColor = renderer.material.color;
+                    renderer.material.SetColor("_Color", Color.green);
+                }
+                else
+                {
+                    /*for (int i = 0; i < go.transform.childCount; i++)
+                    {
+                        go.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", Color.green); //green
+                    }*/
+                    lastGameObject = go;
+                    //lastColor = Color.white;
+                    print("switch 1");
+                }
+               
+            }
+            else if (go != lastGameObject)
             {
-                var renderer = lastGameObject.GetComponent<Renderer>();
-                renderer.material.SetColor("_Color", lastColor);
-
-                renderer = go.GetComponent<Renderer>();
-                lastGameObject = go;
-                lastColor = renderer.material.color;
-                renderer.material.SetColor("_Color", Color.green);
+                if (lastGameObject.GetComponent<Renderer>() != null)
+                {
+                    var renderer = lastGameObject.GetComponent<Renderer>();
+                    renderer.material.SetColor("_Color", lastColor);
+                }
+                else
+                {
+                    /*for (int i = 0; i < lastGameObject.transform.childCount; i++)
+                    {
+                        lastGameObject.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", lastColor); //white
+                    }*/
+                    print("switch 2");
+                }
+                    
+                if (go.GetComponent<Renderer>() != null)
+                {
+                    var renderer = go.GetComponent<Renderer>();
+                    lastGameObject = go;
+                    lastColor = renderer.material.color;
+                    renderer.material.SetColor("_Color", Color.green);
+                }
+                else
+                {
+                    /*for (int i = 0; i < go.transform.childCount; i++)
+                    {
+                        go.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", Color.green); //green
+                    }*/
+                    lastGameObject = go;
+                    //lastColor = Color.white;
+                    print("switch 3");
+                }
             }
 
             print(hitInfo.point);
             if (go.CompareTag("Board"))
+
             {
                 print("HIT BOARD");
             }
-        } else
+        } 
+        else
         {
             if (lastGameObject != null) 
-            { 
-            var renderer = lastGameObject.GetComponent<Renderer>();
-            renderer.material.SetColor("_Color", lastColor);
+            {
+                if (lastGameObject.GetComponent<Renderer>() != null)
+                {
+                    var renderer = lastGameObject.GetComponent<Renderer>();
+                    renderer.material.SetColor("_Color", lastColor);
+                }
+                else
+                {
+                   /* for (int i = 0; i < lastGameObject.transform.childCount; i++)
+                    {
+                        lastGameObject.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", lastColor);
+                    }*/
+                    print("switch 4");
+                }
 
-            lastGameObject = null;
+                lastGameObject = null;
+
             }
         }
     }
