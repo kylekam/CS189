@@ -9,6 +9,7 @@ using TMPro;
 public class TutorialItem : ScaleTween
 {
     public enum ContinueType { OkButton, Hand, None }
+    public enum ComponentAction { None, flipSwitch, turnLeverOut, turnLeverIn }
 
     [Header("Visual Components")]
     [SerializeField] private TextMeshPro bodyTextMesh;
@@ -22,6 +23,7 @@ public class TutorialItem : ScaleTween
 
     [Header("Animation")]
     [SerializeField] private GameObject component;
+    [SerializeField] private ComponentAction componentAction;
 
     // *** ITutorialItem Implementation ***
     [SerializeField] private int m_itemOrder;
@@ -74,7 +76,6 @@ public class TutorialItem : ScaleTween
         else
         { 
             this.transform.SetPositionAndRotation(displayParent.transform.position, displayParent.parent.rotation);
-            // this.transform.parent = displayParent;
             this.transform.parent = displayParent;
             this.transform.localPosition = Vector3.zero;
             if (component != null)
@@ -89,10 +90,35 @@ public class TutorialItem : ScaleTween
                         component.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
                     }
                 }
+                if (componentAction == ComponentAction.flipSwitch)
+                {
+                    component.transform.Rotate(0, 0, 180);
+                } else if (componentAction == ComponentAction.turnLeverOut)
+                {
+                    StartCoroutine(rotateLever(90.0f));
+                } else if (componentAction == ComponentAction.turnLeverIn)
+                {
+                    StartCoroutine(rotateLever(-90.0f));
+                }
             }
         }
         gameObject.SetActive(true);
         base.TweenIn();
+    }
+
+    private IEnumerator rotateLever(float degrees)
+    {
+        Quaternion target = component.transform.rotation * Quaternion.Euler(0, 0, degrees);
+        Quaternion start = component.transform.rotation;
+        float duration = 1.0f;
+        float timeCount = 0.0f;
+        while (timeCount < duration)
+        {
+            component.transform.rotation = Quaternion.Slerp(start, target, timeCount / duration);
+            timeCount += Time.deltaTime;
+            yield return null;
+        }
+        component.transform.rotation = target;
     }
 
     public virtual void Close()
