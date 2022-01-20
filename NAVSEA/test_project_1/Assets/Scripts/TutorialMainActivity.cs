@@ -13,6 +13,7 @@ public class TutorialMainActivity : MonoBehaviour
     void Start()
     {
         Debug.Log($"TutorialMainActivity Start");
+        currentItem = null;
     }
 
     // Update is called once per frame

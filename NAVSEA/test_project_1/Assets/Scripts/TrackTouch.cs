@@ -6,10 +6,13 @@ using Microsoft.MixedReality.Toolkit.Utilities;
 
 public class TrackTouch : MonoBehaviour, IMixedRealityTouchHandler
 {
+    public static GameObject component;
+    public static TutorialItem currentInstruction;
     // Start is called before the first frame update
     void Start()
     {
-        
+        component = null;
+        currentInstruction = null;
     }
 
     // Update is called once per frame
@@ -18,23 +21,18 @@ public class TrackTouch : MonoBehaviour, IMixedRealityTouchHandler
         
     }
 
+    public static void checkComponent(TutorialItem currentItem, GameObject itemComponent)
+    {
+        component = itemComponent;
+        currentInstruction = currentItem;
+    }
+
     void IMixedRealityTouchHandler.OnTouchStarted(HandTrackingInputEventData eventData)
     {
-        /*
-        TutorialItem currentItem = GameObject.Find("InstructionControl").GetComponent<TutorialMainActivity>().currentItem;
-        if (currentItem != null)
+        if (Equals(this.name, component.name))
         {
-            GameObject component = currentItem.component;
-            if (component != null)
-            {
-                if (this.name == component.name)
-                {
-                    Debug.Log("instruction item touched " + this.name);
-                }
-            }
-        }
-        */
-        Debug.Log("touch started: " + this.name);
+            currentInstruction.enableOkButton();
+        } 
     }
 
     void IMixedRealityTouchHandler.OnTouchCompleted(HandTrackingInputEventData eventData)

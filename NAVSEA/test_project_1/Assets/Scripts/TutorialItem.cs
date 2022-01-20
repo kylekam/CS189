@@ -53,8 +53,10 @@ public class TutorialItem : ScaleTween
 
         okButton?.SetActive(false);
         handSymbol?.SetActive(false);
+        /*
         if (continueType == ContinueType.OkButton) { okButton?.SetActive(true); }
         else if (continueType == ContinueType.Hand) { handSymbol?.SetActive(true); }
+        */
     }
 
     void Start()
@@ -146,6 +148,7 @@ public class TutorialItem : ScaleTween
     public void OnTutorialEnter()
     {
         Debug.Log($"[Tutorial Item {ItemOrder}]");
+        TrackTouch.checkComponent(this, component);
 
     }
 

@@ -2085,7 +2085,7 @@ PrefabInstance:
     - target: {fileID: 2204069621426241315, guid: 3f1f46cbecbe08e46a303ccfdb5b498a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2204069621426241343, guid: 3f1f46cbecbe08e46a303ccfdb5b498a,
         type: 3}
@@ -3468,9 +3468,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 879202683758129929, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
+      propertyPath: bounds.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 879202683758129929, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: bounds.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 879202683758129929, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: localCenter.x
+      value: -0.0000004172325
+      objectReference: {fileID: 0}
+    - target: {fileID: 879202683758129929, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: localCenter.y
+      value: 0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 879202683758129929, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: localCenter.z
+      value: -0.50000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 879202683758129929, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
       propertyPath: touchableCollider
       value: 
       objectReference: {fileID: 6154953054672739129}
+    - target: {fileID: 1022112532714381580, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: bounds.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022112532714381580, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: bounds.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022112532714381580, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: localCenter.x
+      value: 0.000001013279
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022112532714381580, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: localCenter.y
+      value: 0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022112532714381580, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: localCenter.z
+      value: -0.50000024
+      objectReference: {fileID: 0}
     - target: {fileID: 1022112532714381580, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
       propertyPath: touchableCollider
@@ -3485,6 +3535,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2151335074370066954, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: bounds.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2151335074370066954, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: bounds.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2151335074370066954, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: localCenter.x
+      value: 0.000000059604645
+      objectReference: {fileID: 0}
+    - target: {fileID: 2151335074370066954, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: localCenter.z
+      value: -0.5000005
       objectReference: {fileID: 0}
     - target: {fileID: 2151335074370066954, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
@@ -3595,6 +3665,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076212566977819182, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: bounds.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076212566977819182, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: bounds.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076212566977819182, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: localCenter.z
+      value: -0.5000005
       objectReference: {fileID: 0}
     - target: {fileID: 9076212566977819182, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
