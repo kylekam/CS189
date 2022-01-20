@@ -72,6 +72,14 @@ public class TutorialItem : ScaleTween
 
     public void Open()
     {
+        if (component == null)
+        {
+            okButton?.SetActive(true);
+        }
+        else
+        {
+            okButton?.SetActive(false);
+        }
         if (displayParent == null)
         { 
             Debug.Log($"{gameObject.name} has no displayParent");    
