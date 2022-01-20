@@ -3524,6 +3524,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1919570455}
     m_Modifications:
+    - target: {fileID: 35936721028802802, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180405186650322713, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 264193549745528966, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
       propertyPath: m_Size.x
@@ -3534,7 +3544,32 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 463849646352357926, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076427614186486435, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099917149173309931, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448125429572816696, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1590042260298366980, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650436950544060627, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -3543,6 +3578,106 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916095894759153001, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955928896710919713, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264730127387619909, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2661710717108587170, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763979806994080016, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2783155173123700869, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867385811030807521, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230501889549806066, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467153563165383354, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501304538247081320, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619991245575259866, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672873256527961935, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723467633656935467, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085440496827993656, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314304008812021604, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615074740007476902, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668097673149941555, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768481969715299014, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327684136956550936, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369036920441673284, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6154953054827954068, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
@@ -3644,15 +3779,75 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6195757842909301661, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217895693441950988, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251149213633352414, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739872519873034450, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6933368798313440656, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7349083327975006000, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
       propertyPath: m_Size.y
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7541163011977479445, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880508596161604153, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120039959322275685, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8236921662430245006, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8385469505136640602, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8520471729892304928, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735394444060806643, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039692075219188119, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightSwitch
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 300845e59ee543a46afd7e831e577637, type: 3}
