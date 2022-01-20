@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9041774131163082698}
   - component: {fileID: 836032112662434947}
+  - component: {fileID: 9062899554113071088}
+  - component: {fileID: 966116291071445685}
   m_Layer: 0
   m_Name: lightswitch
   m_TagString: Untagged
@@ -56,6 +58,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9062899554113071088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374845364480782884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94064f2c4c31454a820eb0dd446867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &966116291071445685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374845364480782884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c748f3768ab714a8449b60fb9edc5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventsToReceive: 0
+  debounceThreshold: 0.01
+  localForward: {x: -0, y: -0, z: -1}
+  localUp: {x: 0, y: 1, z: 0}
+  localCenter: {x: 0, y: 0, z: -0.5}
+  bounds: {x: 1, y: 1}
+  touchableCollider: {fileID: 836032112662434947}
 --- !u!1 &1520479341053958128
 GameObject:
   m_ObjectHideFlags: 0

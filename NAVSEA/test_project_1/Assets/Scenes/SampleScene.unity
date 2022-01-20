@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -915,39 +915,6 @@ MonoBehaviour:
   localCenter: {x: 0, y: 0, z: -1.5}
   bounds: {x: 1, y: 3}
   touchableCollider: {fileID: 6154953054672739118}
---- !u!114 &1851901619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1851901617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63c897c097799da4a900032ad3471c47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingButtonVisuals: {fileID: 0}
-  distanceSpaceMode: 1
-  startPushDistance: 0
-  maxPushDistance: 0.2
-  pressDistance: 0.02
-  releaseDistanceDelta: 0.01
-  returnSpeed: 25
-  releaseOnTouchEnd: 1
-  enforceFrontPush: 1
-  TouchBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  TouchEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  ButtonPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  ButtonReleased:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1919570454
 GameObject:
   m_ObjectHideFlags: 0
@@ -3499,6 +3466,16 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 879202683758129929, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: touchableCollider
+      value: 
+      objectReference: {fileID: 6154953054672739129}
+    - target: {fileID: 1022112532714381580, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: touchableCollider
+      value: 
+      objectReference: {fileID: 6154953054672739132}
     - target: {fileID: 1715291482895517516, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
       propertyPath: m_Size.y
@@ -3509,6 +3486,11 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2151335074370066954, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: touchableCollider
+      value: 
+      objectReference: {fileID: 6154953054672739138}
     - target: {fileID: 6154953054827954068, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
       propertyPath: m_RootOrder
@@ -3569,6 +3551,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Model
       objectReference: {fileID: 0}
+    - target: {fileID: 6154953054827954152, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 18.46364
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154953054827954152, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 12.775964
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154953054827954152, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.6305584
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154953054827954152, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.10383931
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154953054827954152, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.3024947
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154953054827954152, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.6517515
+      objectReference: {fileID: 0}
     - target: {fileID: 6308402110330056454, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
       propertyPath: m_Name
@@ -3584,36 +3596,18 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 9076212566977819182, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: touchableCollider
+      value: 
+      objectReference: {fileID: 6154953054672739135}
     m_RemovedComponents:
     - {fileID: 7589254793454128309, guid: 300845e59ee543a46afd7e831e577637, type: 3}
     - {fileID: 7732320772056735408, guid: 300845e59ee543a46afd7e831e577637, type: 3}
     - {fileID: 373600045272477111, guid: 300845e59ee543a46afd7e831e577637, type: 3}
     - {fileID: 7278230023335937427, guid: 300845e59ee543a46afd7e831e577637, type: 3}
+    - {fileID: 385305988016668336, guid: 300845e59ee543a46afd7e831e577637, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 300845e59ee543a46afd7e831e577637, type: 3}
---- !u!1 &6154953054672739114 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9039692075219188119, guid: 300845e59ee543a46afd7e831e577637,
-    type: 3}
-  m_PrefabInstance: {fileID: 6154953054672739113}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &6154953054672739115 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 7349083327975006000, guid: 300845e59ee543a46afd7e831e577637,
-    type: 3}
-  m_PrefabInstance: {fileID: 6154953054672739113}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6154953054672739116 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1099917149173309931, guid: 300845e59ee543a46afd7e831e577637,
-    type: 3}
-  m_PrefabInstance: {fileID: 6154953054672739113}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &6154953054672739117 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 1715291482895517516, guid: 300845e59ee543a46afd7e831e577637,
-    type: 3}
-  m_PrefabInstance: {fileID: 6154953054672739113}
-  m_PrefabAsset: {fileID: 0}
 --- !u!65 &6154953054672739118 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 264193549745528966, guid: 300845e59ee543a46afd7e831e577637,
@@ -3644,162 +3638,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6154953054672739113}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6154953054672739123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154953054672739114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98c748f3768ab714a8449b60fb9edc5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventsToReceive: 0
-  debounceThreshold: 0.01
-  localForward: {x: -0, y: -0, z: -1}
-  localUp: {x: 0, y: 1, z: 0}
-  localCenter: {x: 0, y: 0, z: -1.5}
-  bounds: {x: 1, y: 3}
-  touchableCollider: {fileID: 6154953054672739115}
---- !u!114 &6154953054672739124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154953054672739114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63c897c097799da4a900032ad3471c47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingButtonVisuals: {fileID: 0}
-  distanceSpaceMode: 1
-  startPushDistance: 0
-  maxPushDistance: 0.2
-  pressDistance: 0.02
-  releaseDistanceDelta: 0.01
-  returnSpeed: 25
-  releaseOnTouchEnd: 1
-  enforceFrontPush: 1
-  TouchBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  TouchEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  ButtonPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  ButtonReleased:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &6154953054672739125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154953054672739116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98c748f3768ab714a8449b60fb9edc5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventsToReceive: 0
-  debounceThreshold: 0.01
-  localForward: {x: -0, y: -0, z: -1}
-  localUp: {x: 0, y: 1, z: 0}
-  localCenter: {x: 0, y: 0, z: -1.5}
-  bounds: {x: 1, y: 3}
-  touchableCollider: {fileID: 6154953054672739117}
---- !u!114 &6154953054672739126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154953054672739116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63c897c097799da4a900032ad3471c47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingButtonVisuals: {fileID: 0}
-  distanceSpaceMode: 1
-  startPushDistance: 0
-  maxPushDistance: 0.2
-  pressDistance: 0.02
-  releaseDistanceDelta: 0.01
-  returnSpeed: 25
-  releaseOnTouchEnd: 1
-  enforceFrontPush: 1
-  TouchBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  TouchEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  ButtonPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  ButtonReleased:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &6154953054672739127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154953054672739119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98c748f3768ab714a8449b60fb9edc5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventsToReceive: 0
-  debounceThreshold: 0.01
-  localForward: {x: -0, y: -0, z: -1}
-  localUp: {x: 0, y: 1, z: 0}
-  localCenter: {x: -0.0000004172325, y: 0.000015258789, z: -0.50000024}
-  bounds: {x: 1.0000001, y: 8}
-  touchableCollider: {fileID: 6154953054672739129}
---- !u!114 &6154953054672739128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154953054672739119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63c897c097799da4a900032ad3471c47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingButtonVisuals: {fileID: 0}
-  distanceSpaceMode: 1
-  startPushDistance: 0
-  maxPushDistance: 0.2
-  pressDistance: 0.02
-  releaseDistanceDelta: 0.01
-  returnSpeed: 25
-  releaseOnTouchEnd: 1
-  enforceFrontPush: 1
-  TouchBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  TouchEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  ButtonPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  ButtonReleased:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!65 &6154953054672739129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3813,58 +3651,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000001, y: 8, z: 1.0000005}
   m_Center: {x: -0.0000004172325, y: 0.000015258789, z: 0.000000029802301}
---- !u!114 &6154953054672739130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154953054672739120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98c748f3768ab714a8449b60fb9edc5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventsToReceive: 0
-  debounceThreshold: 0.01
-  localForward: {x: -0, y: -0, z: -1}
-  localUp: {x: 0, y: 1, z: 0}
-  localCenter: {x: 0.000001013279, y: 0.000015258789, z: -0.50000024}
-  bounds: {x: 1.0000001, y: 8}
-  touchableCollider: {fileID: 6154953054672739132}
---- !u!114 &6154953054672739131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154953054672739120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63c897c097799da4a900032ad3471c47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingButtonVisuals: {fileID: 0}
-  distanceSpaceMode: 1
-  startPushDistance: 0
-  maxPushDistance: 0.2
-  pressDistance: 0.02
-  releaseDistanceDelta: 0.01
-  returnSpeed: 25
-  releaseOnTouchEnd: 1
-  enforceFrontPush: 1
-  TouchBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  TouchEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  ButtonPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  ButtonReleased:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!65 &6154953054672739132
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3878,58 +3664,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000001, y: 8, z: 1.0000005}
   m_Center: {x: 0.000001013279, y: 0.000015258789, z: 0.000000029802301}
---- !u!114 &6154953054672739133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154953054672739121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98c748f3768ab714a8449b60fb9edc5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventsToReceive: 0
-  debounceThreshold: 0.01
-  localForward: {x: -0, y: -0, z: -1}
-  localUp: {x: 0, y: 1, z: 0}
-  localCenter: {x: 0, y: 0, z: -0.5000005}
-  bounds: {x: 1.0000001, y: 8}
-  touchableCollider: {fileID: 6154953054672739135}
---- !u!114 &6154953054672739134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154953054672739121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63c897c097799da4a900032ad3471c47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingButtonVisuals: {fileID: 0}
-  distanceSpaceMode: 1
-  startPushDistance: 0
-  maxPushDistance: 0.2
-  pressDistance: 0.02
-  releaseDistanceDelta: 0.01
-  returnSpeed: 25
-  releaseOnTouchEnd: 1
-  enforceFrontPush: 1
-  TouchBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  TouchEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  ButtonPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  ButtonReleased:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!65 &6154953054672739135
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3943,58 +3677,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000001, y: 8, z: 1.0000004}
   m_Center: {x: 0, y: 0, z: -0.00000032782555}
---- !u!114 &6154953054672739136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154953054672739122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98c748f3768ab714a8449b60fb9edc5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventsToReceive: 0
-  debounceThreshold: 0.01
-  localForward: {x: -0, y: -0, z: -1}
-  localUp: {x: 0, y: 1, z: 0}
-  localCenter: {x: 0.000000059604645, y: 0, z: -0.5000005}
-  bounds: {x: 1.0000001, y: 8}
-  touchableCollider: {fileID: 6154953054672739138}
---- !u!114 &6154953054672739137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154953054672739122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63c897c097799da4a900032ad3471c47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingButtonVisuals: {fileID: 0}
-  distanceSpaceMode: 1
-  startPushDistance: 0
-  maxPushDistance: 0.2
-  pressDistance: 0.02
-  releaseDistanceDelta: 0.01
-  returnSpeed: 25
-  releaseOnTouchEnd: 1
-  enforceFrontPush: 1
-  TouchBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  TouchEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  ButtonPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  ButtonReleased:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!65 &6154953054672739138
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class TutorialMainActivity : MonoBehaviour
 {
     private List<TutorialItem> tutorialItems;
-    private TutorialItem currentItem = null;
+    public TutorialItem currentItem = null;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +71,11 @@ public class TutorialMainActivity : MonoBehaviour
             currentItem.CloseCondition.OnValueChanged -= CloseConditionHandler;
             NextItem();
         }
+    }
+
+    public void enableCurrentOkButton()
+    {
+        currentItem.enableOkButton();
     }
 
     // public void OnItemOpen()

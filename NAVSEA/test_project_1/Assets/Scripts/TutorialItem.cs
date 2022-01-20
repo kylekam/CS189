@@ -22,7 +22,7 @@ public class TutorialItem : ScaleTween
     [SerializeField] Transform displayParent;
 
     [Header("Animation")]
-    [SerializeField] private GameObject component;
+    public GameObject component;
     [SerializeField] private ComponentAction componentAction;
 
     // *** ITutorialItem Implementation ***
@@ -152,5 +152,10 @@ public class TutorialItem : ScaleTween
     public void OnTutorialExit()
     {
 
+    }
+
+    public void enableOkButton()
+    {
+        okButton?.SetActive(true);
     }
 }
