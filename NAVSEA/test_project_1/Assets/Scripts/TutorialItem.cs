@@ -53,6 +53,7 @@ public class TutorialItem : ScaleTween
 
         okButton?.SetActive(false);
         handSymbol?.SetActive(false);
+        if (component == null) { okButton?.SetActive(true); }
         /*
         if (continueType == ContinueType.OkButton) { okButton?.SetActive(true); }
         else if (continueType == ContinueType.Hand) { handSymbol?.SetActive(true); }
