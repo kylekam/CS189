@@ -29,10 +29,13 @@ public class TrackTouch : MonoBehaviour, IMixedRealityTouchHandler
 
     void IMixedRealityTouchHandler.OnTouchStarted(HandTrackingInputEventData eventData)
     {
-        if (Equals(this.name, component.name))
+        if (component != null)
         {
-            currentInstruction.enableOkButton();
-        } 
+            if (Equals(this.name, component.name))
+            {
+                currentInstruction.enableOkButton();
+            }
+        }
     }
 
     void IMixedRealityTouchHandler.OnTouchCompleted(HandTrackingInputEventData eventData)

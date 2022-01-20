@@ -6,8 +6,9 @@ using UnityEngine.Events;
 
 public class TutorialMainActivity : MonoBehaviour
 {
-    private List<TutorialItem> tutorialItems;
-    public TutorialItem currentItem = null;
+    private static List<TutorialItem> tutorialItems;
+    private static bool isRunning = false;
+    public static TutorialItem currentItem = null;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class TutorialMainActivity : MonoBehaviour
             currentItem.Open();
             currentItem.OnTutorialEnter();
         }
+        isRunning = true;
     }
 
     public void StopActivity()
@@ -40,10 +42,16 @@ public class TutorialMainActivity : MonoBehaviour
             tutorialItem.OnTutorialExit();
             currentItem = null;
         }
+        if (isRunning)
+        {
+            GameObject.Find("InstructionControl").GetComponent<MenuButtonConfig>().toggleButton();
+        }
+        isRunning = false;
     }
 
     public void NextItem()
     {
+        Debug.Log("next item");
         // Close current step
         currentItem.Close();
         currentItem.OnTutorialExit();
@@ -62,6 +70,8 @@ public class TutorialMainActivity : MonoBehaviour
         } else
         {
             currentItem = null;
+            GameObject.Find("InstructionControl").GetComponent<MenuButtonConfig>().toggleButton();
+            isRunning = false;
         }
     }
 

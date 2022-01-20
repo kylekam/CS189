@@ -89,32 +89,35 @@ public class TutorialItem : ScaleTween
             this.transform.SetPositionAndRotation(displayParent.transform.position, displayParent.parent.rotation);
             this.transform.parent = displayParent;
             this.transform.localPosition = Vector3.zero;
-            if (component != null)
-            {
-                if (component.GetComponent<Renderer>() != null)
-                {
-                    component.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
-                } else
-                {
-                    for (int i = 0; i < component.transform.childCount; i++)
-                    {
-                        component.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
-                    }
-                }
-                if (componentAction == ComponentAction.flipSwitch)
-                {
-                    component.transform.Rotate(0, 0, 180);
-                } else if (componentAction == ComponentAction.turnLeverOut)
-                {
-                    StartCoroutine(rotateLever(90.0f));
-                } else if (componentAction == ComponentAction.turnLeverIn)
-                {
-                    StartCoroutine(rotateLever(-90.0f));
-                }
-            }
         }
         gameObject.SetActive(true);
         base.TweenIn();
+        if (component != null)
+        {
+            if (component.GetComponent<Renderer>() != null)
+            {
+                component.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
+            }
+            else
+            {
+                for (int i = 0; i < component.transform.childCount; i++)
+                {
+                    component.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
+                }
+            }
+            if (componentAction == ComponentAction.flipSwitch)
+            {
+                component.transform.Rotate(0, 0, 180);
+            }
+            else if (componentAction == ComponentAction.turnLeverOut)
+            {
+                StartCoroutine(rotateLever(90.0f));
+            }
+            else if (componentAction == ComponentAction.turnLeverIn)
+            {
+                StartCoroutine(rotateLever(-90.0f));
+            }
+        }
     }
 
     private IEnumerator rotateLever(float degrees)
@@ -134,16 +137,13 @@ public class TutorialItem : ScaleTween
 
     public virtual void Close()
     {
-        base.TweenOut(delegate ()
-        {
-            gameObject.SetActive(false);
-        });
         if (component != null)
         {
             if (component.GetComponent<Renderer>() != null)
             {
                 component.GetComponent<Renderer>().material.SetColor("_Color", Color.white);
-            } else
+            }
+            else
             {
                 for (int i = 0; i < component.transform.childCount; i++)
                 {
@@ -152,6 +152,10 @@ public class TutorialItem : ScaleTween
             }
 
         }
+        base.TweenOut(delegate ()
+        {
+            gameObject.SetActive(false);
+        });
     }
 
     public void OnTutorialEnter()
