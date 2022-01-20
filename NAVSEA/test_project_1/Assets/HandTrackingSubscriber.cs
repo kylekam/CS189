@@ -15,7 +15,7 @@ public class HandTrackingSubscriber : MonoBehaviour
     {
         Debug.Log("The distance is: " + e.dist);
         //GetComponent<Renderer>().material.SetColor("_Color", Color.red);
-        HandTracking handTracking = GameObject.Find("HandTrackingController").GetComponent<HandTracking>();
-        handTracking.OnHandIsClose -= HandTracking_OnHandIsClose;
+        //HandTracking handTracking = GameObject.Find("HandTrackingController").GetComponent<HandTracking>();
+        //handTracking.OnHandIsClose -= HandTracking_OnHandIsClose;
     }
 }

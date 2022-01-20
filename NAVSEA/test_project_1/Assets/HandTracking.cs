@@ -35,7 +35,7 @@ public class HandTracking : MonoBehaviour
     {
         // If hand is close to the cube, then change the color of the cube to red
         var pos = GameObject.Find(trackedObjectName).transform.position;
-        if(HandJointUtils.TryGetJointPose(TrackedHandJoint.Palm, Handedness.Right, out poseRight) || HandJointUtils.TryGetJointPose(TrackedHandJoint.Palm, Handedness.Right, out poseLeft))
+        if(HandJointUtils.TryGetJointPose(TrackedHandJoint.Palm, Handedness.Right, out poseRight) || HandJointUtils.TryGetJointPose(TrackedHandJoint.Palm, Handedness.Left, out poseLeft))
         {
             float distRight = Vector3.Distance(pos, poseRight.Position);
             float distLeft = Vector3.Distance(pos, poseLeft.Position);
