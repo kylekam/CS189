@@ -161,6 +161,8 @@ public class TutorialItem : ScaleTween
     public void OnTutorialEnter()
     {
         Debug.Log($"[Tutorial Item {ItemOrder}]");
+        string time = System.DateTime.Now.ToString("hh:mm:ss");
+        TutorialMainActivity.log("\n" + time + ": Instruction Step " + stepTextMesh.text + ": " + bodyTextMesh.text);
         TrackTouch.checkComponent(this, component);
 
     }

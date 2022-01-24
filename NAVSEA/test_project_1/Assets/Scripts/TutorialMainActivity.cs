@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Events;
+//using UnityEngine.Windows;
 
 public class TutorialMainActivity : MonoBehaviour
 {
     private static List<TutorialItem> tutorialItems;
     private static bool isRunning = false;
     public static TutorialItem currentItem = null;
+    public static string logFilePath = null;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +26,7 @@ public class TutorialMainActivity : MonoBehaviour
     public void StartActivity()
     {
         Debug.Log("start activity");
+        createLog();
         if (currentItem == null)
         {
             tutorialItems = TutorialItem.GetTutorialItems();
@@ -44,9 +48,11 @@ public class TutorialMainActivity : MonoBehaviour
         }
         if (isRunning)
         {
+            log("Instructions stopped");
             GameObject.Find("InstructionControl").GetComponent<MenuButtonConfig>().toggleButton();
         }
         isRunning = false;
+        logFilePath = null;
     }
 
     public void NextItem()
@@ -72,6 +78,7 @@ public class TutorialMainActivity : MonoBehaviour
             currentItem = null;
             GameObject.Find("InstructionControl").GetComponent<MenuButtonConfig>().toggleButton();
             isRunning = false;
+            logFilePath = null;
         }
     }
 
@@ -87,6 +94,45 @@ public class TutorialMainActivity : MonoBehaviour
     public void enableCurrentOkButton()
     {
         currentItem.enableOkButton();
+    }
+
+    public void createLog()
+    {
+        string logDirectory = Path.Combine(Application.dataPath, "Logs");
+        if (!Directory.Exists(logDirectory))
+        {
+            Directory.CreateDirectory(logDirectory);
+            Debug.Log("log directory created: " + logDirectory);
+        }
+        string dateTime = System.DateTime.Now.ToString("MMddyyyyhhmmss");
+        string formattedDateTime = System.DateTime.Now.ToString("MM/dd/yyyy, hh:mm:ss");
+        logFilePath = Path.Combine(logDirectory, "NAVSEALog" + dateTime + ".txt");
+        File.AppendAllText(logFilePath, "Procedure started at " + formattedDateTime + "\n");
+        //File.Create(logFilePath).Dispose();
+        Debug.Log("log file created: " + logFilePath);
+        /*
+        var w = File.CreateText(logFilePath);
+        w.WriteLine("Procedure started at " + formattedDateTime);
+        w.Close();*/
+    }
+
+    public static void log(string line)
+    {
+        File.AppendAllText(logFilePath, line + "\n");
+    }
+
+    public void logInstructionButtonContinue()
+    {
+        Debug.Log("instruction button log");
+        string time = System.DateTime.Now.ToString("hh:mm:ss");
+        File.AppendAllText(logFilePath, time + ": Clicked button in instruction\n");
+    }
+
+    public static void logHandMenuButtonContinue()
+    {
+        string time = System.DateTime.Now.ToString("hh:mm:ss");
+        Debug.Log("hand menu button log");
+        File.AppendAllText(logFilePath, time + ": Clicked next step button in hand menu\n");
     }
 
     // public void OnItemOpen()
