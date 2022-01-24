@@ -40,3 +40,8 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 Thumbs.db
+
+###
+# Git Attribute file to maintain Unity Scenes
+###
+*.gitattributes

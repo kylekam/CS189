@@ -39,11 +39,11 @@ public class HandTracking : MonoBehaviour
         {
             float distRight = Vector3.Distance(pos, poseRight.Position);
             float distLeft = Vector3.Distance(pos, poseLeft.Position);
-            //Debug.Log("Location of cube is: " + pos);
-            //Debug.Log("Distance between hand and cube is: " + dist);
+            //Debug.Log("Location of object is: " + pos);
+            //Debug.Log("Distance between hand and object is: " + dist);
             if (OnHandIsClose != null && (distRight < howClose || distLeft < howClose))
             {
-                OnHandIsClose.Invoke(this, new OnHandIsCloseEventArgs {dist = Mathf.Min(distRight,distLeft) }) ;
+                OnHandIsClose.Invoke(this, new OnHandIsCloseEventArgs { dist = Mathf.Min(distRight,distLeft) }) ;
             }
         }
     }
