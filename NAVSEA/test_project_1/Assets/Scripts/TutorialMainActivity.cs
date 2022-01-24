@@ -4,7 +4,6 @@ using System.Linq;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Events;
-//using UnityEngine.Windows;
 
 public class TutorialMainActivity : MonoBehaviour
 {
@@ -98,7 +97,15 @@ public class TutorialMainActivity : MonoBehaviour
 
     public void createLog()
     {
-        string logDirectory = Path.Combine(Application.dataPath, "Logs");
+        string logDirectory = null;
+        //editor file path: Assets/Logs
+        //hololens file path: User Folders/LocalAppData/NAVSEA/LocalState/Logs
+#if UNITY_EDITOR
+        logDirectory = Path.Combine(Application.dataPath, "Logs");
+#elif WINDOWS_UWP
+        logDirectory = Path.Combine(Application.persistentDataPath, "Logs");
+#endif
+        Debug.Log(logDirectory);
         if (!Directory.Exists(logDirectory))
         {
             Directory.CreateDirectory(logDirectory);
