@@ -34,14 +34,25 @@ public class TrackTouch : MonoBehaviour, IMixedRealityTouchHandler
         {
             if (Equals(this.name, component.name))
             {
-                currentInstruction.enableOkButton(); // Replace with firing custom event
+                currentInstruction.isTouched = true;
+                currentInstruction.enableOkButton();
             }
+        }
+        if (TutorialMainActivity.logFilePath != null)
+        {
+            string time = System.DateTime.Now.ToString("hh:mm:ss");
+            TutorialMainActivity.log(time + ": Touched " + this.name);
         }
     }
 
     void IMixedRealityTouchHandler.OnTouchCompleted(HandTrackingInputEventData eventData)
     {
         //Debug.Log("touch completed: " + this.name);
+        if (TutorialMainActivity.logFilePath != null)
+        {
+            string time = System.DateTime.Now.ToString("hh:mm:ss");
+            TutorialMainActivity.log(time + ": Stopped touching " + this.name);
+        }
     }
 
     void IMixedRealityTouchHandler.OnTouchUpdated(HandTrackingInputEventData eventData)
