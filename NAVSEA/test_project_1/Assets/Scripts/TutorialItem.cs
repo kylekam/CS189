@@ -25,6 +25,8 @@ public class TutorialItem : ScaleTween
     public GameObject component;
     [SerializeField] private ComponentAction componentAction;
 
+    [HideInInspector] public bool isTouched = false;
+
     // *** ITutorialItem Implementation ***
     [SerializeField] private int m_itemOrder;
     public int ItemOrder
@@ -161,6 +163,8 @@ public class TutorialItem : ScaleTween
     public void OnTutorialEnter()
     {
         Debug.Log($"[Tutorial Item {ItemOrder}]");
+        string time = System.DateTime.Now.ToString("hh:mm:ss");
+        TutorialMainActivity.log("\n" + time + ": Instruction Step " + stepTextMesh.text + ": " + bodyTextMesh.text);
         TrackTouch.checkComponent(this, component);
 
     }
@@ -172,6 +176,9 @@ public class TutorialItem : ScaleTween
 
     public void enableOkButton()
     {
-        okButton?.SetActive(true);
+        if (isTouched)
+        {
+            okButton?.SetActive(true);
+        }
     }
 }
