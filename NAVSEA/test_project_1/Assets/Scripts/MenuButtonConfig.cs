@@ -31,12 +31,14 @@ public class MenuButtonConfig : MonoBehaviour
             button.GetComponent<ButtonConfigHelper>().MainLabelText = "Next Instruction";
             button.GetComponent<ButtonConfigHelper>().OnClick.RemoveListener(instructionControl.GetComponent<TutorialMainActivity>().StartActivity);
             button.GetComponent<ButtonConfigHelper>().OnClick.RemoveListener(toggleButton);
+            button.GetComponent<ButtonConfigHelper>().OnClick.AddListener(TutorialMainActivity.logHandMenuButtonContinue);
             button.GetComponent<ButtonConfigHelper>().OnClick.AddListener(instructionControl.GetComponent<TutorialMainActivity>().NextItem);
             button.GetComponent<ButtonConfigHelper>().SetQuadIconByName("IconHide"); //icon names at Packages/Mixed Reality Toolkit Foundation/SDK/Standard Assets/Textures
             instructionsRunning = true;
         } else
         {
             button.GetComponent<ButtonConfigHelper>().MainLabelText = "Start Instructions";
+            button.GetComponent<ButtonConfigHelper>().OnClick.RemoveListener(TutorialMainActivity.logHandMenuButtonContinue);
             button.GetComponent<ButtonConfigHelper>().OnClick.RemoveListener(instructionControl.GetComponent<TutorialMainActivity>().NextItem);
             button.GetComponent<ButtonConfigHelper>().OnClick.AddListener(instructionControl.GetComponent<TutorialMainActivity>().StartActivity);
             button.GetComponent<ButtonConfigHelper>().OnClick.AddListener(toggleButton);
