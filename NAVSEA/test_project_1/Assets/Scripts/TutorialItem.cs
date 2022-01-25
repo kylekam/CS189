@@ -25,6 +25,8 @@ public class TutorialItem : ScaleTween
     public GameObject component;
     [SerializeField] private ComponentAction componentAction;
 
+    [HideInInspector] public bool isTouched = false;
+
     // *** ITutorialItem Implementation ***
     [SerializeField] private int m_itemOrder;
     public int ItemOrder
@@ -174,6 +176,9 @@ public class TutorialItem : ScaleTween
 
     public void enableOkButton()
     {
-        okButton?.SetActive(true);
+        if (isTouched)
+        {
+            okButton?.SetActive(true);
+        }
     }
 }
