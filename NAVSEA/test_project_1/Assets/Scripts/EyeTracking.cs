@@ -7,7 +7,8 @@ using Microsoft.MixedReality.Toolkit;
 public class EyeTracking : MonoBehaviour
 {
     private GameObject lastGameObject;
-    private Color lastColor;
+    private Color DEFAULT_COLOR = Color.white;
+    private Color HIGHLIGHT_COLOR = Color.green;
     //private bool objectFound = false;
 
     // Start is called before the first frame update
@@ -19,92 +20,54 @@ public class EyeTracking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        GameObject go = CoreServices.InputSystem.EyeGazeProvider.HitInfo.collider.gameObject;
-
-        if(lastGameObject == null)
-        {
-            if (go.GetComponent<Renderer>() != null)
-            {
-
-                var renderer = go.GetComponent<Renderer>();
-                lastGameObject = go;
-                lastColor = renderer.material.color;
-                renderer.material.SetColor("_Color", Color.green);
-            }
-            else
-            {
-                /*for (int i = 0; i < go.transform.childCount; i++)
-                {
-                    go.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", Color.green); //green
-                }*/
-                lastGameObject = go;
-                //lastColor = Color.white;
-                print("switch 1");
-            }
-
-        }
-        else if (go != lastGameObject)
-        {
-            if (lastGameObject.GetComponent<Renderer>() != null)
-            {
-                var renderer = lastGameObject.GetComponent<Renderer>();
-                renderer.material.SetColor("_Color", lastColor);
-            }
-            else
-            {
-                /*for (int i = 0; i < lastGameObject.transform.childCount; i++)
-                {
-                    lastGameObject.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", lastColor); //white
-                }*/
-                print("switch 2");
-            }
-
-            if (go.GetComponent<Renderer>() != null)
-            {
-                var renderer = go.GetComponent<Renderer>();
-                lastGameObject = go;
-                lastColor = renderer.material.color;
-                renderer.material.SetColor("_Color", Color.green);
-            }
-            else
-            {
-                /*for (int i = 0; i < go.transform.childCount; i++)
-                {
-                    go.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", Color.green); //green
-                }*/
-                lastGameObject = go;
-                //lastColor = Color.white;
-                print("switch 3");
-            }
-
-        }
-        else
-        {
-            if (lastGameObject != null)
-            {
-                 if (lastGameObject.GetComponent<Renderer>() != null)
-                {
-                    var renderer = lastGameObject.GetComponent<Renderer>();
-                    renderer.material.SetColor("_Color", lastColor);
-                }
-                else
-                {
-                   /* for (int i = 0; i < lastGameObject.transform.childCount; i++)
-                    {
-                        lastGameObject.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", lastColor);
-                    }*/
-                    print("switch 4");
-                }
-
-                lastGameObject = null;
-            }
-        }
-
-
-
+        highlight();
     }
 
+    void highlight()
+    {
+        GameObject go = CoreServices.InputSystem.EyeGazeProvider.HitInfo.collider?.gameObject;
+
+        if (go != null && (go.name == "Model" || go.name == "System")) { return; }
+
+        if (go != null && !go.CompareTag("Board"))
+        {
+            if (go != lastGameObject && lastGameObject != null)
+            {
+                changeColor(lastGameObject, DEFAULT_COLOR);
+                lastGameObject = go;
+            }
+
+            changeColor(go, HIGHLIGHT_COLOR);
+        }
+
+        else if (lastGameObject != null)
+        {
+            changeColor(lastGameObject, DEFAULT_COLOR);
+            lastGameObject = null;
+        }
+    }
+
+    void changeColor(GameObject gameObject, Color color)
+    {
+        if (gameObject == null)
+        {
+            return;
+        }
+
+        if (!gameObject.CompareTag("LightSwitch"))
+        {
+            var renderer = gameObject.GetComponent<Renderer>();
+            renderer.material.SetColor("_Color", color);
+        } else
+        {
+            for (int i = 0; i < gameObject.transform.childCount; i++)
+            {
+                gameObject.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", color); //green
+            }
+        }
+
+        this.lastGameObject = gameObject;
+    }
 
         // HEAD-GAZE CODE
 
