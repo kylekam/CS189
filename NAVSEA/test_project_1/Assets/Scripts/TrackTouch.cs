@@ -8,6 +8,7 @@ public class TrackTouch : MonoBehaviour, IMixedRealityTouchHandler
 {
     public static GameObject component;
     public static TutorialItem currentInstruction;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +35,8 @@ public class TrackTouch : MonoBehaviour, IMixedRealityTouchHandler
             if (Equals(this.name, component.name))
             {
                 currentInstruction.isTouched = true;
-                currentInstruction.enableOkButton();
+                Debug.Log("touched: " + component.name);
+                currentInstruction.enableOkButton(); // Checks if all conditions are true
             }
         }
         if (TutorialMainActivity.logFilePath != null)

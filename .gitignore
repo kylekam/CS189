@@ -45,3 +45,8 @@ NAVSEA/test_project_1/Assets/Logs.meta
 Icon?
 ehthumbs.db
 Thumbs.db
+
+###
+# Git Attribute file to maintain Unity Scenes
+###
+*.gitattributes

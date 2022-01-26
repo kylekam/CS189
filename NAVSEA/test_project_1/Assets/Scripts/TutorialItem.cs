@@ -26,6 +26,7 @@ public class TutorialItem : ScaleTween
     [SerializeField] private ComponentAction componentAction;
 
     [HideInInspector] public bool isTouched = false;
+    [HideInInspector] public bool isClose = false;
 
     // *** ITutorialItem Implementation ***
     [SerializeField] private int m_itemOrder;
@@ -166,6 +167,7 @@ public class TutorialItem : ScaleTween
         string time = System.DateTime.Now.ToString("hh:mm:ss");
         TutorialMainActivity.log("\n" + time + ": Instruction Step " + stepTextMesh.text + ": " + bodyTextMesh.text);
         TrackTouch.checkComponent(this, component);
+        TrackHands.checkComponent(this, component);
 
     }
 
@@ -174,9 +176,13 @@ public class TutorialItem : ScaleTween
 
     }
 
+
+    /***
+     *  Validation Logic
+     ***/
     public void enableOkButton()
     {
-        if (isTouched)
+        if (isTouched && isClose )
         {
             okButton?.SetActive(true);
         }
