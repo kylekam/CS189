@@ -35,7 +35,8 @@ public class TrackTouch : MonoBehaviour, IMixedRealityTouchHandler
             if (Equals(this.name, component.name))
             {
                 currentInstruction.isTouched = true;
-                currentInstruction.enableOkButton();
+                Debug.Log("touched: " + component.name);
+                currentInstruction.enableOkButton(); // Checks if all conditions are true
             }
         }
         if (TutorialMainActivity.logFilePath != null)
