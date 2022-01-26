@@ -8,6 +8,7 @@ public class EyeTracking : MonoBehaviour
 {
     private GameObject lastGameObject;
     private Color lastColor;
+    //private bool objectFound = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,70 +20,90 @@ public class EyeTracking : MonoBehaviour
     void Update()
     {
 
-        GameObject gameObject = CoreServices.InputSystem.EyeGazeProvider.HitInfo.collider.gameObject;
-        if (gameObject != null)
+        GameObject go = CoreServices.InputSystem.EyeGazeProvider.HitInfo.collider.gameObject;
+
+        if(lastGameObject == null)
         {
-            Outline outline;
-
-            if (!gameObject.CompareTag("LightSwitch"))
+            if (go.GetComponent<Renderer>() != null)
             {
-                outline = gameObject.GetComponent<Outline>();
-                outline.OutlineWidth = 2;
-                outline.enabled = true;
 
-                print(gameObject.name + " Outline enabled: " + outline.enabled + " IsActiveAndEnabled: " + outline.isActiveAndEnabled);
+                var renderer = go.GetComponent<Renderer>();
+                lastGameObject = go;
+                lastColor = renderer.material.color;
+                renderer.material.SetColor("_Color", Color.green);
             }
             else
             {
-                print(gameObject.name);
-                for (int i = 0; i < gameObject.transform.childCount; i++)
+                /*for (int i = 0; i < go.transform.childCount; i++)
                 {
-                    outline = gameObject.transform.GetChild(i).GetComponent<Outline>();
-                    outline.OutlineWidth = 2;
-                    outline.enabled = true;
-                }
+                    go.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", Color.green); //green
+                }*/
+                lastGameObject = go;
+                //lastColor = Color.white;
+                print("switch 1");
             }
 
-            if (lastGameObject != null && lastGameObject != gameObject)
+        }
+        else if (go != lastGameObject)
+        {
+            if (lastGameObject.GetComponent<Renderer>() != null)
             {
-                if (!lastGameObject.CompareTag("LightSwitch"))
+                var renderer = lastGameObject.GetComponent<Renderer>();
+                renderer.material.SetColor("_Color", lastColor);
+            }
+            else
+            {
+                /*for (int i = 0; i < lastGameObject.transform.childCount; i++)
                 {
-                    outline = lastGameObject.GetComponent<Outline>();
-                    outline.enabled = false;
-                }
-                else
-                {
-                    for (int i = 0; i < lastGameObject.transform.childCount; i++)
-                    {
-                        outline = lastGameObject.transform.GetChild(i).GetComponent<Outline>();
-                        outline.enabled = false;
-                    }
-                }
+                    lastGameObject.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", lastColor); //white
+                }*/
+                print("switch 2");
             }
 
-            lastGameObject = gameObject;
+            if (go.GetComponent<Renderer>() != null)
+            {
+                var renderer = go.GetComponent<Renderer>();
+                lastGameObject = go;
+                lastColor = renderer.material.color;
+                renderer.material.SetColor("_Color", Color.green);
+            }
+            else
+            {
+                /*for (int i = 0; i < go.transform.childCount; i++)
+                {
+                    go.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", Color.green); //green
+                }*/
+                lastGameObject = go;
+                //lastColor = Color.white;
+                print("switch 3");
+            }
+
         }
         else
         {
             if (lastGameObject != null)
             {
-                Outline outline;
-
-                if (lastGameObject.CompareTag("LightSwich"))
+                 if (lastGameObject.GetComponent<Renderer>() != null)
                 {
-                    for (int i = 0; i < lastGameObject.transform.childCount; i++)
-                    {
-                        outline = lastGameObject.transform.GetChild(i).GetComponent<Outline>();
-                        outline.enabled = false;
-                    }
+                    var renderer = lastGameObject.GetComponent<Renderer>();
+                    renderer.material.SetColor("_Color", lastColor);
                 }
                 else
                 {
-                    outline = lastGameObject.GetComponent<Outline>();
-                    outline.enabled = false;
+                   /* for (int i = 0; i < lastGameObject.transform.childCount; i++)
+                    {
+                        lastGameObject.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", lastColor);
+                    }*/
+                    print("switch 4");
                 }
+
+                lastGameObject = null;
             }
         }
+
+
+
+    }
 
 
         // HEAD-GAZE CODE
@@ -153,5 +174,5 @@ public class EyeTracking : MonoBehaviour
                 }
             }
         }*/
-    }
+    
 }

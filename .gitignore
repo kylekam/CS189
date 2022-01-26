@@ -15,6 +15,9 @@ sysinfo.txt
 # Unity3D generated meta files
 *.pidb.meta
 
+NAVSEA/test_project_1/Assets/Logs/
+NAVSEA/test_project_1/Assets/Logs.meta
+
 ###
 # VS/MD solution and project files
 ###
@@ -42,3 +45,8 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 Thumbs.db
+
+###
+# Git Attribute file to maintain Unity Scenes
+###
+*.gitattributes
