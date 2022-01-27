@@ -27,7 +27,7 @@ public class EyeTracking : MonoBehaviour
         {
             if (Equals(go.name, component.name))
             {
-                currentInstruction.isGazed = true;
+                //currentInstruction.isGazed = true;
                 currentInstruction.enableOkButton(); // Checks if all conditions are true
                 highlight(go);
                 highlightEnabled = false;
