@@ -26,6 +26,7 @@ public class TutorialItem : ScaleTween
     [SerializeField] private ComponentAction componentAction;
 
     [HideInInspector] public bool isTouched = false;
+    [HideInInspector] public bool isRotated = false;
 
     // *** ITutorialItem Implementation ***
     [SerializeField] private int m_itemOrder;
@@ -166,6 +167,7 @@ public class TutorialItem : ScaleTween
         string time = System.DateTime.Now.ToString("hh:mm:ss");
         TutorialMainActivity.log("\n" + time + ": Instruction Step " + stepTextMesh.text + ": " + bodyTextMesh.text);
         TrackTouch.checkComponent(this, component);
+        TrackRotate.checkComponent(this, component);
 
     }
 
@@ -176,7 +178,14 @@ public class TutorialItem : ScaleTween
 
     public void enableOkButton()
     {
-        if (isTouched)
+        if (component.name.Contains("knob"))
+        {
+            if (isRotated)
+            {
+                okButton?.SetActive(true);
+            }
+        }
+        else if (isTouched)
         {
             okButton?.SetActive(true);
         }
