@@ -28,6 +28,7 @@ public class TutorialItem : ScaleTween
     [HideInInspector] public bool isTouched = false;
     [HideInInspector] public bool isRotated = false;
     [HideInInspector] public bool isClose = false;
+    [HideInInspector] public bool isGazed = false;
 
     // *** ITutorialItem Implementation ***
     [SerializeField] private int m_itemOrder;
@@ -170,7 +171,7 @@ public class TutorialItem : ScaleTween
         TrackTouch.checkComponent(this, component);
         TrackRotate.checkComponent(this, component);
         TrackHands.checkComponent(this, component);
-
+        EyeTracking.checkComponent(this, component);
     }
 
     public void OnTutorialExit()

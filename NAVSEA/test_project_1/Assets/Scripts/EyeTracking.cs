@@ -9,7 +9,9 @@ public class EyeTracking : MonoBehaviour
     private GameObject lastGameObject;
     private Color DEFAULT_COLOR = Color.white;
     private Color HIGHLIGHT_COLOR = Color.green;
-    //private bool objectFound = false;
+    private static bool highlightEnabled = false;
+    public static GameObject component = null;
+    public static TutorialItem currentInstruction;
 
     // Start is called before the first frame update
     void Start()
@@ -20,14 +22,40 @@ public class EyeTracking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        highlight();
+        GameObject go = CoreServices.InputSystem.EyeGazeProvider.HitInfo.collider?.gameObject;
+        if (component != null && go != null)
+        {
+            if (Equals(go.name, component.name))
+            {
+                currentInstruction.isGazed = true;
+                currentInstruction.enableOkButton(); // Checks if all conditions are true
+                highlight(go);
+                highlightEnabled = false;
+            }
+        }
+        if (highlightEnabled)
+        {
+            highlight(go);
+        }
     }
 
-    void highlight()
+    public static void checkComponent(TutorialItem currentItem, GameObject itemComponent)
     {
-        GameObject go = CoreServices.InputSystem.EyeGazeProvider.HitInfo.collider?.gameObject;
+        component = itemComponent;
+        currentInstruction = currentItem;
+        if(component != null)
+        {
+            highlightEnabled = true;
+        }
+    }
+
+    void highlight(GameObject go)
+    {
+        //GameObject go = CoreServices.InputSystem.EyeGazeProvider.HitInfo.collider?.gameObject;
 
         if (go != null && (go.name == "Model" || go.name == "System")) { return; }
+
+        if (go != null && !go.CompareTag("LightSwitch") && go.GetComponent<Renderer>() == null) { return; }
 
         if (go != null && !go.CompareTag("Board"))
         {
