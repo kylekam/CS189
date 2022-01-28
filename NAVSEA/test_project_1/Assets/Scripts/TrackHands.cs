@@ -50,7 +50,13 @@ public class TrackHands : MonoBehaviour
     {
         component = itemComponent;
         currentInstruction = currentItem;
-        componentName = component.transform.name;
+        if (component != null)
+        {
+            componentName = component.transform.name;
+        } else
+        {
+            componentName = "";
+        }
     }
 
 }
