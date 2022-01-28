@@ -65,6 +65,8 @@ public class EyeTracking : MonoBehaviour
         {
             if (go != lastGameObject)
             {
+                string time = System.DateTime.Now.ToString("hh:mm:ss");
+                TutorialMainActivity.log(time + ": Looked at " + go.name);
                 if (lastGameObject != null)
                 {
                     changeColor(lastGameObject, DEFAULT_COLOR);
