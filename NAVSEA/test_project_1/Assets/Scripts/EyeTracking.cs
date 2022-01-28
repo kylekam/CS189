@@ -25,6 +25,7 @@ public class EyeTracking : MonoBehaviour
         GameObject go = CoreServices.InputSystem.EyeGazeProvider.HitInfo.collider?.gameObject;
         if (component != null && go != null)
         {
+            //Debug.Log("looked at " + go.name);
             if (Equals(go.name, component.name))
             {
                 currentInstruction.isGazed = true;
@@ -58,13 +59,16 @@ public class EyeTracking : MonoBehaviour
 
         if (go != null && (go.name == "Model" || go.name == "System")) { return; }
 
-        if (go != null && !go.CompareTag("LightSwitch") && go.GetComponent<Renderer>() == null) { return; }
+        if (go != null && !go.CompareTag("LightSwitch") && !go.CompareTag("Lever") && go.GetComponent<Renderer>() == null) { return; }
 
         if (go != null && !go.CompareTag("Board"))
         {
-            if (go != lastGameObject && lastGameObject != null)
+            if (go != lastGameObject)
             {
-                changeColor(lastGameObject, DEFAULT_COLOR);
+                if (lastGameObject != null)
+                {
+                    changeColor(lastGameObject, DEFAULT_COLOR);
+                }
                 lastGameObject = go;
             }
 
@@ -85,16 +89,16 @@ public class EyeTracking : MonoBehaviour
             return;
         }
 
-        if (!gameObject.CompareTag("LightSwitch"))
-        {
-            var renderer = gameObject.GetComponent<Renderer>();
-            renderer.material.SetColor("_Color", color);
-        } else
+        if (gameObject.CompareTag("LightSwitch") || gameObject.CompareTag("Lever"))
         {
             for (int i = 0; i < gameObject.transform.childCount; i++)
             {
                 gameObject.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", color); //green
             }
+        } else
+        {
+            var renderer = gameObject.GetComponent<Renderer>();
+            renderer.material.SetColor("_Color", color);
         }
 
         this.lastGameObject = gameObject;
