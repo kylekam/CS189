@@ -22,21 +22,23 @@ public class EyeTracking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /* GameObject go = CoreServices.InputSystem.EyeGazeProvider.HitInfo.collider?.gameObject;
+         if (component != null && go != null)
+         {
+             if (Equals(go.name, component.name))
+             {
+                 //currentInstruction.isGazed = true;
+                 currentInstruction.enableOkButton(); // Checks if all conditions are true
+                 highlight(go);
+                 highlightEnabled = false;
+             }
+         }
+         if (highlightEnabled)
+         {
+             highlight(go);
+         }*/
         GameObject go = CoreServices.InputSystem.EyeGazeProvider.HitInfo.collider?.gameObject;
-        if (component != null && go != null)
-        {
-            if (Equals(go.name, component.name))
-            {
-                //currentInstruction.isGazed = true;
-                currentInstruction.enableOkButton(); // Checks if all conditions are true
-                highlight(go);
-                highlightEnabled = false;
-            }
-        }
-        if (highlightEnabled)
-        {
-            highlight(go);
-        }
+        highlight(go);
     }
 
     public static void checkComponent(TutorialItem currentItem, GameObject itemComponent)
@@ -55,7 +57,7 @@ public class EyeTracking : MonoBehaviour
 
         if (go != null && (go.name == "Model" || go.name == "System")) { return; }
 
-        if (go != null && !go.CompareTag("LightSwitch") && go.GetComponent<Renderer>() == null) { return; }
+        //if (go != null && !go.CompareTag("LightSwitch") && go.GetComponent<Renderer>() == null) { return; }
 
         if (go != null && !go.CompareTag("Board"))
         {
