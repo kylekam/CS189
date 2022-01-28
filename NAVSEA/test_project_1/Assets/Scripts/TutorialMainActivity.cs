@@ -9,6 +9,8 @@ public class TutorialMainActivity : MonoBehaviour
 {
     private static List<TutorialItem> tutorialItems;
     private static bool isRunning = false;
+    private static bool hasStarted = false;
+    private static int instructionNumber = 0;
     public static TutorialItem currentItem = null;
     public static string logFilePath = null;
 
@@ -29,11 +31,23 @@ public class TutorialMainActivity : MonoBehaviour
         if (currentItem == null)
         {
             tutorialItems = TutorialItem.GetTutorialItems();
+            for (int i=0; i<instructionNumber; i++)
+            {
+                tutorialItems.Remove(tutorialItems[0]);
+            }
             currentItem = tutorialItems[0];
+            if (hasStarted)
+            {
+                currentItem.animationEnabled = false;
+            } else
+            {
+                currentItem.animationEnabled = true;
+            }
             currentItem.Open();
             currentItem.OnTutorialEnter();
         }
         isRunning = true;
+        hasStarted = true;
     }
 
     public void StopActivity()
@@ -56,7 +70,6 @@ public class TutorialMainActivity : MonoBehaviour
 
     public void NextItem()
     {
-        Debug.Log("next item");
         // Close current step
         currentItem.Close();
         currentItem.OnTutorialExit();
@@ -72,12 +85,15 @@ public class TutorialMainActivity : MonoBehaviour
             }
             currentItem.Open();
             currentItem.OnTutorialEnter();
+            instructionNumber++;
         } else
         {
             currentItem = null;
             GameObject.Find("InstructionControl").GetComponent<MenuButtonConfig>().toggleButton();
             isRunning = false;
             logFilePath = null;
+            instructionNumber = 0;
+            hasStarted = false;
         }
     }
 

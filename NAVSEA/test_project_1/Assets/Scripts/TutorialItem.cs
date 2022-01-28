@@ -30,6 +30,8 @@ public class TutorialItem : ScaleTween
     [HideInInspector] public bool isClose = false;
     [HideInInspector] public bool isGazed = false;
 
+    [HideInInspector] public bool animationEnabled = true;
+
     // *** ITutorialItem Implementation ***
     [SerializeField] private int m_itemOrder;
     public int ItemOrder
@@ -110,17 +112,20 @@ public class TutorialItem : ScaleTween
                     component.transform.GetChild(i).GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
                 }
             }
-            if (componentAction == ComponentAction.flipSwitch)
+            if (animationEnabled)
             {
-                component.transform.Rotate(0, 0, 180);
-            }
-            else if (componentAction == ComponentAction.turnLeverOut)
-            {
-                StartCoroutine(rotateLever(90.0f));
-            }
-            else if (componentAction == ComponentAction.turnLeverIn)
-            {
-                StartCoroutine(rotateLever(-90.0f));
+                if (componentAction == ComponentAction.flipSwitch)
+                {
+                    component.transform.Rotate(0, 0, 180);
+                }
+                else if (componentAction == ComponentAction.turnLeverOut)
+                {
+                    StartCoroutine(rotateLever(90.0f));
+                }
+                else if (componentAction == ComponentAction.turnLeverIn)
+                {
+                    StartCoroutine(rotateLever(-90.0f));
+                }
             }
         }
     }
