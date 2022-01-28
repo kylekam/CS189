@@ -131,7 +131,9 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.1
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: -2484932724999845310, guid: acbc0464f893c2f4da0eee4a0ac11e9b, type: 2}
+  - {fileID: 4101347364101848725, guid: f4ad26be51f3d02408aa74b1f05f9263, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -633,7 +635,7 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Template3D
+  metroPackageName: ARMaintenanceTool
   metroPackageVersion: 1.0.0.0
   metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 

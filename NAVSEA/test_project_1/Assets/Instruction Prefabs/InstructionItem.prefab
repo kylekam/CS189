@@ -68,6 +68,7 @@ MonoBehaviour:
   componentAction: 0
   isTouched: 0
   isRotated: 0
+  isClose: 0
   m_itemOrder: 1
   CloseCondition: {fileID: 0}
 --- !u!1 &780469603012230810

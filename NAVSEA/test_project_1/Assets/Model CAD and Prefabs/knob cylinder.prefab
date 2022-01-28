@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3489091885913816164}
   - component: {fileID: -7263677699015609767}
   - component: {fileID: 2927311224288087001}
+  - component: {fileID: 6365077560820956065}
   m_Layer: 0
   m_Name: knob cylinder
   m_TagString: Untagged
@@ -127,3 +128,16 @@ MonoBehaviour:
   localCenter: {x: 0, y: 0, z: 0}
   bounds: {x: 0, y: 0}
   touchableCollider: {fileID: 3489091885913816164}
+--- !u!114 &6365077560820956065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913936158819077586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688c14aacce3acd4288487973edb2a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasBeenTriggered: 0

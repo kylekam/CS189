@@ -27,6 +27,7 @@ public class TutorialItem : ScaleTween
 
     [HideInInspector] public bool isTouched = false;
     [HideInInspector] public bool isRotated = false;
+    [HideInInspector] public bool isClose = false;
 
     // *** ITutorialItem Implementation ***
     [SerializeField] private int m_itemOrder;
@@ -168,6 +169,7 @@ public class TutorialItem : ScaleTween
         TutorialMainActivity.log("\n" + time + ": Instruction Step " + stepTextMesh.text + ": " + bodyTextMesh.text);
         TrackTouch.checkComponent(this, component);
         TrackRotate.checkComponent(this, component);
+        TrackHands.checkComponent(this, component);
 
     }
 
@@ -176,6 +178,10 @@ public class TutorialItem : ScaleTween
 
     }
 
+
+    /***
+     *  Validation Logic
+     ***/
     public void enableOkButton()
     {
         if (component.name.Contains("knob"))
@@ -185,7 +191,7 @@ public class TutorialItem : ScaleTween
                 okButton?.SetActive(true);
             }
         }
-        else if (isTouched)
+        else if (isTouched && isClose)
         {
             okButton?.SetActive(true);
         }
