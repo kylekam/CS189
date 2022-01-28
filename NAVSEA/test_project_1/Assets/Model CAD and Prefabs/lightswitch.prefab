@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 836032112662434947}
   - component: {fileID: 9062899554113071088}
   - component: {fileID: 966116291071445685}
+  - component: {fileID: 16515379296684817}
   m_Layer: 0
   m_Name: lightswitch
   m_TagString: Untagged
@@ -89,6 +90,19 @@ MonoBehaviour:
   localCenter: {x: 0, y: 0, z: -0.5}
   bounds: {x: 1, y: 1}
   touchableCollider: {fileID: 836032112662434947}
+--- !u!114 &16515379296684817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374845364480782884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688c14aacce3acd4288487973edb2a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasBeenTriggered: 0
 --- !u!1 &1520479341053958128
 GameObject:
   m_ObjectHideFlags: 0
