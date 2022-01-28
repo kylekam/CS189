@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -476,6 +476,7 @@ GameObject:
   - component: {fileID: 963194231}
   - component: {fileID: 963194230}
   - component: {fileID: 963194232}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -548,6 +549,18 @@ Transform:
   m_Father: {fileID: 1613656246}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa25eacebe5120640bfb192a3dd26478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -832,7 +845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d9acc7968244a8886f3af591305bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeProfile: {fileID: 11400000, guid: 7e7c962b9eb9dfa44993d5b2f2576752, type: 2}
+  activeProfile: {fileID: 11400000, guid: 136d149434bf6794e805c5f9ee2691d4, type: 2}
 --- !u!4 &1197759103
 Transform:
   m_ObjectHideFlags: 0
@@ -2212,6 +2225,11 @@ PrefabInstance:
       propertyPath: touchableCollider
       value: 
       objectReference: {fileID: 6154953054672739132}
+    - target: {fileID: 1099917149173309931, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightSwitch
+      objectReference: {fileID: 0}
     - target: {fileID: 1715291482895517516, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
       propertyPath: m_Size.y
@@ -2221,6 +2239,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955928896710919713, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightSwitch
       objectReference: {fileID: 0}
     - target: {fileID: 2151335074370066954, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
@@ -2247,6 +2270,11 @@ PrefabInstance:
       propertyPath: touchableCollider
       value: 
       objectReference: {fileID: 6154953054672739138}
+    - target: {fileID: 2496294187432775239, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6154953054827954068, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
       propertyPath: m_RootOrder
@@ -2307,6 +2335,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Model
       objectReference: {fileID: 0}
+    - target: {fileID: 6154953055034695177, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_TagString
+      value: Board
+      objectReference: {fileID: 0}
     - target: {fileID: 6308402110330056454, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
       propertyPath: m_Name
@@ -2315,12 +2348,17 @@ PrefabInstance:
     - target: {fileID: 7349083327975006000, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
       propertyPath: m_Size.y
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7349083327975006000, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
       propertyPath: m_Size.z
-      value: 1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039692075219188119, guid: 300845e59ee543a46afd7e831e577637,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightSwitch
       objectReference: {fileID: 0}
     - target: {fileID: 9076212566977819182, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
