@@ -2706,7 +2706,7 @@ PrefabInstance:
     - target: {fileID: 6308402110330056454, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}
       propertyPath: m_Name
-      value: button cylinder
+      value: button cylinder (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7349083327975006000, guid: 300845e59ee543a46afd7e831e577637,
         type: 3}

@@ -14,7 +14,7 @@ public class TrackHands : MonoBehaviour
     public static GameObject component;
     public static TutorialItem currentInstruction;
     public static string componentName;
-    public bool hasBeenTriggered = false; // So that it only detects it once.
+    public static bool hasBeenTriggered = false; // So that it only detects it once.
 
     MixedRealityPose poseRight;
     MixedRealityPose poseLeft;
@@ -48,6 +48,7 @@ public class TrackHands : MonoBehaviour
     }
     public static void checkComponent(TutorialItem currentItem, GameObject itemComponent)
     {
+        hasBeenTriggered = false;
         component = itemComponent;
         currentInstruction = currentItem;
         if (component != null)
