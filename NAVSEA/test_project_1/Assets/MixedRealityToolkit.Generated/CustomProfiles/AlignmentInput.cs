@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeechAlignment : MonoBehaviour, IMixedRealitySpeechHandler
+public class AlignmentInput : MonoBehaviour, IMixedRealitySpeechHandler
 {
     public TriangleCalculator calc;
     public Transform targetPivot;
@@ -17,7 +17,7 @@ public class SpeechAlignment : MonoBehaviour, IMixedRealitySpeechHandler
     MixedRealityPose poseLeftThumb;
     MixedRealityPose poseLeftPointer;
 
-    public bool alightnmentEnabled;
+    private bool alightnmentEnabled;
     private bool pinchCompleted; // Used so that the pinch is only registered once
 
     // Start is called before the first frame update
