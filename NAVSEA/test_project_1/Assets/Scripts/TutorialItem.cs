@@ -34,6 +34,10 @@ public class TutorialItem : ScaleTween
 
     // *** ITutorialItem Implementation ***
     [SerializeField] private int m_itemOrder;
+
+    private AudioSource audioSource;
+    public bool playAudio = true;
+
     public int ItemOrder
     {
         get => m_itemOrder;
@@ -69,7 +73,7 @@ public class TutorialItem : ScaleTween
 
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -195,12 +199,22 @@ public class TutorialItem : ScaleTween
         {
             if (isRotated)
             {
-                okButton?.SetActive(true);
+                onInstructionComplete();
             }
         }
         else if (isTouched && isClose)
         {
-            okButton?.SetActive(true);
+            onInstructionComplete();
+        }
+    }
+
+    public void onInstructionComplete()
+    {
+        okButton?.SetActive(true);
+        if (playAudio)
+        {
+            audioSource.Play();
+            playAudio = false;
         }
     }
 }
