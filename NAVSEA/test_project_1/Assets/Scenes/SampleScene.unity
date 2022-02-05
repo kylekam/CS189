@@ -1525,7 +1525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hostTransform: {fileID: 1919570455}
-  manipulationType: 3
+  manipulationType: 2
   twoHandedManipulationType: 3
   allowFarManipulation: 1
   useForcesForNearManipulation: 0
