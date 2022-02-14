@@ -4,9 +4,11 @@ using System.Linq;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Events;
+using Microsoft.MixedReality.Toolkit.UI;
 
 public class TutorialMainActivity : MonoBehaviour
 {
+    public GameObject system;
     private static List<TutorialItem> tutorialItems;
     private static bool isRunning = false;
     private static bool hasStarted = false;
@@ -46,6 +48,10 @@ public class TutorialMainActivity : MonoBehaviour
             currentItem.Open();
             currentItem.OnTutorialEnter();
         }
+        if (system != null)
+        {
+            system.GetComponent<ObjectManipulator>().enabled = false;
+        }
         isRunning = true;
         hasStarted = true;
     }
@@ -63,6 +69,10 @@ public class TutorialMainActivity : MonoBehaviour
         {
             log("Instructions stopped");
             GameObject.Find("InstructionControl").GetComponent<MenuButtonConfig>().toggleButton();
+        }
+        if (system != null)
+        {
+            system.GetComponent<ObjectManipulator>().enabled = true;
         }
         isRunning = false;
         logFilePath = null;
@@ -91,6 +101,10 @@ public class TutorialMainActivity : MonoBehaviour
         {
             currentItem = null;
             GameObject.Find("InstructionControl").GetComponent<MenuButtonConfig>().toggleButton();
+            if (system != null)
+            {
+                system.GetComponent<ObjectManipulator>().enabled = false;
+            }
             isRunning = false;
             logFilePath = null;
             instructionNumber = 0;
