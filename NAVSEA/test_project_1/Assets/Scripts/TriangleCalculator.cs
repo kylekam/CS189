@@ -18,7 +18,10 @@ public class TriangleCalculator : MonoBehaviour
     public void MakeTriangle()
     {
     //Figure out center of 3 points to a triangle
-      center.transform.position = GetCenter(pointA.transform.position, pointB.transform.position, pointC.transform.position);
+    center.transform.position = GetCenter(pointA.transform.position, pointB.transform.position, pointC.transform.position);
+    center.transform.position -= transform.right * 0.012f;
+    center.transform.position += transform.up * 0.005f;
+    center.transform.position += transform.forward * 0.005f;
 
     // Find vectors corresponding to two of the sides of the triangle.
     Vector3 side1 = pointB.transform.position - pointA.transform.position;
@@ -30,13 +33,31 @@ public class TriangleCalculator : MonoBehaviour
     center.transform.rotation = Quaternion.LookRotation(normal);
     }
 
+    
+    // Finds the center along the longest side of the triangle
     private Vector3 GetCenter(Vector3 pointA, Vector3 pointB, Vector3 pointC)
     {
-      Vector3 returnVector = Vector3.zero;
-      returnVector.x = (pointA.x + pointB.x + pointC.x) / 3;
-      returnVector.y = (pointA.y + pointB.y + pointC.y) / 3;
-      returnVector.z = (pointA.z + pointB.z + pointC.z) / 3;
+        Vector3[] compare = new Vector3[3];
+        Vector3 maxVector = Vector3.zero;
+        int indexOfLargest = 0;
 
-    return  returnVector;
+        compare[0] = pointA;
+        compare[1] = pointB;
+        compare[2] = pointC;
+
+        for (int i = 0; i < compare.Length; i++)
+        {
+            Vector3 distance = compare[i] - compare[i + 1 > 2 ? 0 : i + 1];
+            if (distance.magnitude > maxVector.magnitude)
+            {
+                maxVector = distance;
+                indexOfLargest = i;
+            }
+        }
+
+        maxVector = compare[indexOfLargest] - maxVector / 2;
+        Debug.Log(indexOfLargest);
+
+        return maxVector;
     }
 }
