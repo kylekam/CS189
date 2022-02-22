@@ -8,7 +8,7 @@ using Microsoft.MixedReality.Toolkit.UI;
 
 public class TutorialMainActivity : MonoBehaviour
 {
-    public GameObject system;
+    private static GameObject system;
     private static List<TutorialItem> tutorialItems;
     private static bool isRunning = false;
     private static bool hasStarted = false;
@@ -29,6 +29,7 @@ public class TutorialMainActivity : MonoBehaviour
     public void StartActivity()
     {
         Debug.Log("start activity");
+        system = GameObject.Find("System");
         createLog();
         if (currentItem == null)
         {
@@ -73,6 +74,9 @@ public class TutorialMainActivity : MonoBehaviour
         if (system != null)
         {
             system.GetComponent<ObjectManipulator>().enabled = true;
+        } else
+        {
+            Debug.Log("system is null");
         }
         isRunning = false;
         logFilePath = null;
@@ -103,7 +107,7 @@ public class TutorialMainActivity : MonoBehaviour
             GameObject.Find("InstructionControl").GetComponent<MenuButtonConfig>().toggleButton();
             if (system != null)
             {
-                system.GetComponent<ObjectManipulator>().enabled = false;
+                system.GetComponent<ObjectManipulator>().enabled = true;
             }
             isRunning = false;
             logFilePath = null;
