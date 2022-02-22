@@ -29,7 +29,7 @@ public class AlignmentInput : MonoBehaviour, IMixedRealitySpeechHandler
     {
         CoreServices.InputSystem?.RegisterHandler<IMixedRealitySpeechHandler>(this);
         button.GetComponent<ButtonConfigHelper>().OnClick.AddListener(enableAlignment);
-        alightnmentEnabled = false; // CHANGE AFTER ATTACHING TO INSTRUCTIONS
+        alightnmentEnabled = false;
         pinchCompleted = false;
     }
 
