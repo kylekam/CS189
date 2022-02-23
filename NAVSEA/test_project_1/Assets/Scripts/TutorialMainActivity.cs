@@ -98,7 +98,6 @@ public class TutorialMainActivity : MonoBehaviour
                 currentItem.CloseCondition.OnValueChanged += CloseConditionHandler;
             }
             currentItem.Open();
-            currentItem.playAudio = true;
             currentItem.OnTutorialEnter();
             instructionNumber++;
         } else

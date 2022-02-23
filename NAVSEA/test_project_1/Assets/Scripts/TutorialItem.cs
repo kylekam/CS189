@@ -36,7 +36,7 @@ public class TutorialItem : ScaleTween
     [SerializeField] private int m_itemOrder;
 
     private AudioSource audioSource;
-    public bool playAudio = true;
+    private bool playAudio = true;
 
     public int ItemOrder
     {
@@ -170,6 +170,11 @@ public class TutorialItem : ScaleTween
         {
             gameObject.SetActive(false);
         });
+
+        isTouched = false;
+        isRotated = false;
+        isGazed = false;
+        playAudio = true;
     }
 
     public void OnTutorialEnter()
@@ -197,12 +202,12 @@ public class TutorialItem : ScaleTween
     {
         if (component.name.Contains("knob"))
         {
-            if (isRotated)
+            if (isRotated && isGazed)
             {
                 onInstructionComplete();
             }
         }
-        else if (isTouched && isClose)
+        else if (isTouched && isClose && isGazed)
         {
             onInstructionComplete();
         }
