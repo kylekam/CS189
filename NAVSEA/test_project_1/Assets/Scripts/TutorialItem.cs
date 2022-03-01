@@ -191,7 +191,7 @@ public class TutorialItem : ScaleTween
 
     public void OnTutorialExit()
     {
-
+        EyeTracking.disableHighlight();
     }
 
 

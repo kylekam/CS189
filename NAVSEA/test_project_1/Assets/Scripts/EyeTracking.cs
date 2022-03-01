@@ -53,6 +53,11 @@ public class EyeTracking : MonoBehaviour
         }
     }
 
+    public static void disableHighlight()
+    {
+        highlightEnabled = false;
+    }
+
     void highlight(GameObject go)
     {
         //GameObject go = CoreServices.InputSystem.EyeGazeProvider.HitInfo.collider?.gameObject;
