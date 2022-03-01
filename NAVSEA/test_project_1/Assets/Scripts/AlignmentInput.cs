@@ -71,6 +71,8 @@ public class AlignmentInput : MonoBehaviour, IMixedRealitySpeechHandler
     // Stops the alignment procedure, and brings back the enable alignment button
     public void disableAlignment()
     {
+        counter = -1;
+        moduloCounter = 0;
         alightnmentEnabled = false;
         button.GetComponent<ButtonConfigHelper>().MainLabelText = "Enable Alignment";
         button.GetComponent<ButtonConfigHelper>().OnClick.RemoveListener(disableAlignment);
@@ -108,7 +110,7 @@ public class AlignmentInput : MonoBehaviour, IMixedRealitySpeechHandler
         if (HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Right, out poseRight))
         {
             counter++;
-            moduloCounter = counter % 5;
+            moduloCounter = counter % 4;
 
             // Spawn orb at location of finger
             switch (moduloCounter)
