@@ -56,6 +56,7 @@ public class AlignmentInput : MonoBehaviour, IMixedRealitySpeechHandler
         }
     }
 
+    // Starts the alignment procedure, and brings back the disable alignment button
     public void enableAlignment()
     {
         alightnmentEnabled = true;
@@ -64,8 +65,10 @@ public class AlignmentInput : MonoBehaviour, IMixedRealitySpeechHandler
         button.GetComponent<ButtonConfigHelper>().OnClick.RemoveListener(enableAlignment);
         button.GetComponent<ButtonConfigHelper>().OnClick.AddListener(disableAlignment);
         button.GetComponent<ButtonConfigHelper>().SetQuadIconByName("IconClose"); //icon names at Packages/Mixed Reality Toolkit Foundation/SDK/Standard Assets/Textures
+    
     }
 
+    // Stops the alignment procedure, and brings back the enable alignment button
     public void disableAlignment()
     {
         alightnmentEnabled = false;
@@ -112,31 +115,21 @@ public class AlignmentInput : MonoBehaviour, IMixedRealitySpeechHandler
             {
                 case 0:
                     calc.pointA.transform.position = poseRight.Position;
+                    calc.pointA.GetComponent<MeshRenderer>().enabled = true;
                     break;
                 case 1:
                     calc.pointB.transform.position = poseRight.Position;
+                    calc.pointB.GetComponent<MeshRenderer>().enabled = true;
                     break;
                 case 2:
                     calc.pointC.transform.position = poseRight.Position;
+                    calc.pointC.GetComponent<MeshRenderer>().enabled = true;
                     break;
                 case 3:
                     calc.MakeTriangle();
                     targetPivot.position = calc.center.transform.position;
                     targetPivot.rotation = calc.center.transform.rotation;
                     disableAlignment();
-                    
-
-                    break;
-
-                // CASE 4 IS NOT CURRENTLY USED. IT IS USED FOR THE ALIGNMENT CYCLE.
-                case 4:
-                    //Reset everything
-                    targetPivot.rotation = new Quaternion(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360), 1);
-                    targetPivot.position = new Vector3(3.5f, 0, 3);
-                    calc.center.transform.position = Vector3.left;
-                    calc.pointA.transform.position = Vector3.left;
-                    calc.pointB.transform.position = Vector3.left;
-                    calc.pointC.transform.position = Vector3.left;
                     break;
             }
         }
